@@ -4,8 +4,8 @@ const Hero = ({handleLogout}) => {
     return (
         <section className="hero">
             <nav>
-                <h2>Welcome</h2>
-                <button onClick={handleLogout}>Logout</button>
+                <h2>Bem-vindo</h2>
+                <button onClick={handleLogout}>Sair</button>
             </nav>
         </section>
     )

@@ -11,6 +11,7 @@ function App() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const clearInputs = () => {
     setEmail("");
@@ -33,16 +34,17 @@ function App() {
           case "auth/invalid-email":
           case "auth/user-disabled":
           case "auth/user-not-found":
-            setEmailError(err.message);
+            setEmailError('E-mail inválido.');
             break;
           case "auth/wrong-password":
-            setPasswordError(err.message);
+            setPasswordError('Senha inválida.');
             break;
         }
       });
   };
 
   const handleSignup = () => {
+    if (password === confirmPassword) {
     clearErrors();
     fire
       .auth()
@@ -51,14 +53,18 @@ function App() {
         switch (err.code) {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
-            setEmailError(err.message);
+            setEmailError('O e-mail já está em uso ou é inválido.');
             break;
           case "auth/weak-password":
-            setPasswordError(err.message);
+            setPasswordError('O password deve ter no mínimo 6 caracteres.');
             break;
         }
       });
-  };
+    } else {
+      setPasswordError('As senhas devem ser iguais.')
+  }
+}
+  
 
   const handleLogout = () => {
     fire.auth().signOut();
@@ -95,6 +101,8 @@ function App() {
           setHasAccount={setHasAccount}
           emailError={emailError}
           passwordError={passwordError}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
         />
       )}
     </AppWrap>

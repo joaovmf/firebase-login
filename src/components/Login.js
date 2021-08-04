@@ -12,38 +12,71 @@ const Login = (props) => {
     setHasAccount,
     emailError,
     passwordError,
+    confirmPassword,
+    setConfirmPassword,
   } = props;
 
   return (
     <section className="login">
       <div className="loginContainer">
-        <label>Username</label>
-        <input
-          type="text"
-          autoFocus
-          require
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <p className="errorMsg">{emailError}</p>
-        <label>Password</label>
-        <input
-          type="password"
-          require
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <p className="errorMsg">{passwordError}</p>
+        {hasAccount ? (
+          <>
+          <label>Usuário</label>
+          <input
+            type="text"
+            autoFocus
+            require
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <p className="errorMsg">{emailError}</p>
+          <label>Senha</label>
+          <input
+            type="password"
+            require
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <p className="errorMsg">{passwordError}</p>
+          </>
+        ) : (
+          <>
+          <label>Usuário</label>
+          <input
+            type="text"
+            autoFocus
+            require
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <p className="errorMsg">{emailError}</p>
+          <label>Senha</label>
+          <input
+            type="password"
+            require
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>Confirmar Senha</label>
+          <input
+            type="password"
+            require
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <p className="errorMsg">{passwordError}</p>
+          </>
+        )}
         <div className="btnContainer">
           {hasAccount ? (
             <>
-              <button onClick={handleLogin}>Sign in</button>
-              <p>Don't have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
+              <button onClick={handleLogin}>Entre</button>
+              <p> Não tem uma conta ? <span onClick={() => setHasAccount(!hasAccount)}>Se inscreva</span></p>
             </>
           ) : (
             <>
-              <button onClick={handleSignup}>Sign up</button>
-              <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></p>
+              <button onClick={handleSignup}>Se inscreva</button>
+              <p>Tem uma conta ? <span onClick={() => setHasAccount(!hasAccount)}>Entre</span></p>
             </>
           )}
         </div>
