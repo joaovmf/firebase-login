@@ -91,7 +91,7 @@ button {
 }
 
 .login .loginContainer .btnContainer p span:hover {
-  color: red;
+  color: #f0ebec;
 }
 
 .login .loginContainer .errorMsg {
