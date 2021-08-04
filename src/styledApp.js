@@ -18,7 +18,7 @@ button {
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: #603bbb;
+  background: rgba(154,205,50, 0.9) 100%;
   cursor: pointer;
 }
 
@@ -41,9 +41,9 @@ button {
   justify-content: center;
   background: radial-gradient(
     ellipse at left bottom,
-    rgba(22, 24, 47, 1) 0%,
-    rgba(38, 20, 72, 0.9) 59%,
-    rgba(17, 27, 75, 0.9) 100%
+    rgba(34,139,34, 1) 0%,
+    rgba(0,100,0, 0.9) 59%,
+    rgba(124,252,0, 0.9) 100%
   );
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
@@ -70,12 +70,14 @@ button {
 .login .loginContainer .btnContainer {
   width: 100%;
   padding: 24px 0;
+  
 }
 
 .login .loginContainer .btnContainer p {
   margin: 14px 0 0 0;
   text-align: right;
   color: #fff;
+  
 }
 
 .login .loginContainer .btnContainer p span {
@@ -85,6 +87,7 @@ button {
   margin-left: 5px;
   cursor: pointer;
   transition: all 400ms ease-in-out;
+  
 }
 
 .login .loginContainer .btnContainer p span:hover {
@@ -101,14 +104,14 @@ button {
   min-height: 100vh;
   background: radial-gradient(
     ellipse at left bottom,
-    rgba(22, 24, 47, 1) 0%,
-    rgba(38, 20, 72, 0.9) 59%,
-    rgba(17, 27, 75, 0.9) 100%
+    rgba(34,139,34, 1) 0%,
+    rgba(0,100,0, 0.9) 59%,
+    rgba(124,252,0, 0.9) 100%
   );
 }
 
 .hero nav {
-  background: #603bbb;
+  background: rgba(0,100,0, 0.9);
   width: 100%;
   padding: 20px 40px;
   display: flex;
@@ -123,7 +126,9 @@ button {
 .hero nav button {
   width: 86px;
   padding: 8px 0;
-  background: #3a2b58;
+  background: rgba(154,205,50, 0.9);
 }
+
+
 
 `
