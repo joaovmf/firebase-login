@@ -24,9 +24,7 @@ button {
 }
 
 .login {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0 20px;
+  min-height: 90vh;
   background: #e9e9e9;
   display: flex;
 }
@@ -35,8 +33,8 @@ button {
   padding: 60px;
   margin: auto;
   width: 100%;
-  max-width: 520px;
-  min-height: 600px;
+  max-width: 500px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,6 +123,10 @@ button {
   background: rgba(154,205,50, 0.9);
 }
 
-
+@media (max-width: 340px) {
+  .login .loginContainer label {
+  width: 200px;
+  }
+}
 
 `

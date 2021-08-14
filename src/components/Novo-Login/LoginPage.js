@@ -77,7 +77,7 @@ const LoginPage = (props) => {
                   Se inscreva
                 </button>
                 <p>
-                  Tem uma conta ?{" "}
+                  Tem uma conta?{" "}
                   <span onClick={() => setHasAccount(!hasAccount)}>Entre</span>
                 </p>
               </>
@@ -88,7 +88,7 @@ const LoginPage = (props) => {
                 </button>
                 <p>
                   {" "}
-                  Não tem uma conta ?{" "}
+                  Não tem uma conta?{" "}
                   <span onClick={() => setHasAccount(!hasAccount)}>
                     Se inscreva
                   </span>
