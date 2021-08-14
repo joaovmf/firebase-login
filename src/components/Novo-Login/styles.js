@@ -12,13 +12,14 @@ export const AppWrap = styled.div `
 
 button {
   border: none;
+  border-radius: 10px;
   outline: none;
   width: 100%;
   padding: 15px 0;
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: rgba(154,205,50, 0.9) 100%;
+  background: #D3D800;
   cursor: pointer;
 }
 
@@ -39,12 +40,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: radial-gradient(
-    ellipse at left bottom,
-    rgba(34,139,34, 1) 0%,
-    rgba(0,100,0, 0.9) 59%,
-    rgba(124,252,0, 0.9) 100%
-  );
+  background-color: #004A65;
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 

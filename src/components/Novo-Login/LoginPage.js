@@ -1,4 +1,5 @@
 import React from "react";
+import HeaderLogin from "./Header/HeaderLogin"
 
 const LoginPage = (props) => {
   const {
@@ -17,6 +18,8 @@ const LoginPage = (props) => {
   } = props;
 
   return (
+    <>
+    <HeaderLogin />
     <section className="login">
       <div className="loginContainer">
         {hasAccount ? (
@@ -45,7 +48,7 @@ const LoginPage = (props) => {
            onChange={(e) => setConfirmPassword(e.target.value)}
          />
          <p className="errorMsg">{passwordError}</p>
-         </>
+       </>
         ) : (
           <>
           <label>Usuário</label>
@@ -65,23 +68,38 @@ const LoginPage = (props) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <p className="errorMsg">{passwordError}</p>
-          </>
+        </>
+        
         )}
         <div className="btnContainer">
           {hasAccount ? (
-           <>
-           <button onClick={handleSignup} className="btn">Se inscreva</button>
-           <p>Tem uma conta ? <span onClick={() => setHasAccount(!hasAccount)}>Entre</span></p>
-         </>
+            <>
+              <button onClick={handleLogin} className="btn">
+                Entre
+              </button>
+              <p>
+                {" "}
+                Não tem uma conta ?{" "}
+                <span onClick={() => setHasAccount(!hasAccount)}>
+                  Se inscreva
+                </span>
+              </p>
+            </>
           ) : (
             <>
-            <button onClick={handleLogin} className="btn">Entre</button>
-            <p> Não tem uma conta ? <span onClick={() => setHasAccount(!hasAccount)}>Se inscreva</span></p>
-          </>
+              <button onClick={handleSignup} className="btn">
+                Se inscreva
+              </button>
+              <p>
+                Tem uma conta ?{" "}
+                <span onClick={() => setHasAccount(!hasAccount)}>Entre</span>
+              </p>
+            </>
           )}
         </div>
       </div>
     </section>
+    </>
   );
 };
 
