@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = (props) => {
+const LoginPage = (props) => {
   const {
     email,
     setEmail,
@@ -85,4 +85,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default LoginPage;

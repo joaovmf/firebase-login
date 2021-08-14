@@ -1,10 +1,10 @@
-import { AppWrap } from "./styledApp";
+import { AppWrap } from "./styles";
 import React, { useState, useEffect } from "react";
-import fire from "./fire";
-import Login from "./components/Login";
-import Hero from "./components/Hero";
+import fire from "../../fire";
+import LoginPage from "./LoginPage";
+import Home from "../Home";
 
-function App() {
+function Login() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -88,9 +88,9 @@ function App() {
   return (
     <AppWrap>
       {user ? (
-        <Hero handleLogout={handleLogout} />
+        <Home handleLogout={handleLogout} />
       ) : (
-        <Login
+        <LoginPage
           email={email}
           setEmail={setEmail}
           password={password}
@@ -109,4 +109,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
